@@ -41,7 +41,7 @@ class Checker:
 				self.valid += 1
 				valid.append(token)
 			else:
-				self.bad += 1
+				self.invalid += 1
 
 		print(f"{ui.prefix} Checked {ui.red}{self.checked:,}{ui.reset} tokens, {ui.red}{self.valid:,}{ui.reset} were good, {ui.red}{self.invalid:,}{ui.reset} were bad.")
 

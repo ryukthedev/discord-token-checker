@@ -1,5 +1,4 @@
-# Discord Token Checker
-Discord Token Checker 🐍
+# Discord Token Checker 🐍
 A discord token checker, completely open source and ready to go.
 
 # **Features:**

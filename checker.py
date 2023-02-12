@@ -25,10 +25,6 @@ class Checker:
 
 		if check.status_code == 200:
 			return True
-		elif check.status_code == 429:
-			print(f"{ui.prefix} Rate limited, sleeping temporarily.")
-			sleep(900)
-			return False
 		else:
 			self.invalid += 1
 			return False

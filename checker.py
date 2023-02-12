@@ -1,5 +1,6 @@
 import requests
 
+from time import sleep
 from ui import UI
 
 class Checker:
@@ -20,11 +21,16 @@ class Checker:
 			"Authorization": token
 		}
 
-		check = session.post("https://discord.com/api/v6/invite/valorant", headers=headers)
+		check = session.get("https://discord.com/api/users/@me", headers=headers)
 
-		if check.status_code == 400:
+		if check.status_code == 200:
 			return True
+		elif check.status_code == 429:
+			print(f"{ui.prefix} Rate limited, sleeping temporarily.")
+			sleep(900)
+			return False
 		else:
+			self.invalid += 1
 			return False
 
 	def start(self) -> None:

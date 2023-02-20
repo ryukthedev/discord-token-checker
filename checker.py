@@ -16,10 +16,8 @@ class Checker:
 			f.write("\n".join(valid))
 
 	def validate(self, token: str) -> bool:
-
-		headers = {
-			"Authorization": token
-		}
+		
+		headers: dict = {'Authorization': token}
 
 		check = session.get("https://discord.com/api/users/@me", headers=headers)
 
